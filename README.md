@@ -1,3 +1,0 @@
-# Abadnu-
-# Abadnu-
-# Abadnu-
