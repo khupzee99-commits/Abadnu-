@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Abadnu Official | BGMI 20K Mobile</title>
+    <style>
+        /* Mobile-First Design Tokens */
+        :root {
+            --primary-gold: #ffcc00;
+            --secondary-neon: #00f2ff;
+            --bg-dark: #0a0a0c;
+            --card-bg: #16161a;
+            --text-main: #ffffff;
+            --text-dim: #a0a0a5;
+            --safe-area: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        /* Full-Width Mobile Hero */
+        .hero {
+            height: 55vh;
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=800') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-start;
+            padding: var(--safe-area);
+            border-bottom: 4px solid var(--primary-gold);
+        }
+
+        .hero p {
+            font-size: 0.9rem;
+            color: var(--secondary-neon);
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            color: var(--primary-gold);
+            line-height: 1;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+        }
+
+        /* Prize Pool Sticky Bar Simulation */
+        .prize-bar {
+            background: var(--primary-gold);
+            color: #000;
+            padding: 12px;
+            text-align: center;
+            font-weight: 900;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        /* Battle Cry Quote Section */
+        .battle-cry {
+            padding: 40px var(--safe-area);
+            text-align: center;
+            background: linear-gradient(180deg, #0a0a0c 0%, #1a1a20 100%);
+            border-bottom: 1px solid #333;
+        }
+
+        .quote-box {
+            position: relative;
+            padding: 20px;
+        }
+
+        .quote-box h2 {
+            font-style: italic;
+            font-size: 1.4rem;
+            color: #fff;
+            line-height: 1.4;
+            margin-bottom: 15px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .quote-box span {
+            color: var(--primary-gold);
+            font-weight: 900;
+            font-style: normal;
+            display: block;
+            font-size: 1.6rem;
+            margin-top: 10px;
+        }
+
+        .content {
+            padding: var(--safe-area);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            margin: 30px 0 20px 0;
+            color: var(--secondary-neon);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Mobile Cards Stack */
+        .info-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary-gold);
+        }
+
+        .info-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            color: var(--primary-gold);
+        }
+
+        .info-card p {
+            font-size: 0.95rem;
+            color: var(--text-dim);
+        }
+
+        .points-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin-top: 10px;
+            color: var(--text-main);
+        }
+
+        .points-table td {
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .points-table td:last-child {
+            text-align: right;
+            font-weight: bold;
+            color: var(--secondary-neon);
+        }
+
+        /* Roadmap vertical dots */
+        .roadmap {
+            border-left: 2px solid #333;
+            margin-left: 10px;
+            padding-left: 20px;
+        }
+
+        .roadmap-step {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .roadmap-step::before {
+            content: "";
+            position: absolute;
+            left: -27px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: var(--secondary-neon);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--secondary-neon);
+        }
+
+        .step-date {
+            font-weight: 900;
+            font-size: 0.85rem;
+            color: var(--secondary-neon);
+        }
+
+        /* Mobile Sticky Bottom CTA Area */
+        .cta-container {
+            margin-top: 40px;
+            padding: 25px;
+            background: #111116;
+            border-radius: 20px 20px 0 0;
+            text-align: center;
+            border-top: 2px solid var(--secondary-neon);
+        }
+
+        .cta-container h2 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .btn-whatsapp {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #25D366;
+            color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin-top: 15px;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp svg {
+            margin-right: 12px;
+            width: 28px;
+            height: 28px;
+        }
+
+        .footer-text {
+            padding: 30px;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #444;
+            background: #000;
+        }
+
+        /* Landscape fix */
+        @media (orientation: landscape) and (max-height: 500px) {
+            .hero { height: 100vh; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Hero Section -->
+    <section class="hero">
+        <p>Abadnu Official</p>
+        <h1>20K BGMI<br>PRO SERIES</h1>
+    </section>
+
+    <!-- Prize Pool Banner -->
+    <div class="prize-bar">
+        🏆 PRIZE POOL: ₹20,000
+    </div>
+
+    <!-- Battle Cry Quote Section -->
+    <section class="battle-cry">
+        <div class="quote-box">
+            <h2>"Legends aren't born in the lobby; they are forged in the final circle."</h2>
+            <span>STOP WATCHING. START WINNING.</span>
+        </div>
+    </section>
+
+    <div class="content">
+        <!-- Tournament Summary -->
+        <h2 class="section-title">Official Standard</h2>
+        
+        <div class="info-card">
+            <h3>Standard Map Pool</h3>
+            <p><b>Erangel, Miramar, Rondo.</b></p>
+        </div>
+
+        <div class="info-card" style="border-left-color: var(--secondary-neon);">
+            <h3>Point System (New Rules)</h3>
+            <p>Standard 10-Point System applied:</p>
+            <table class="points-table">
+                <tr><td>1st (WWCD)</td><td>10 pts</td></tr>
+                <tr><td>2nd Place</td><td>6 pts</td></tr>
+                <tr><td>3rd Place</td><td>5 pts</td></tr>
+                <tr><td>4th Place</td><td>4 pts</td></tr>
+                <tr><td>5th Place</td><td>3 pts</td></tr>
+                <tr><td>6th Place</td><td>2 pts</td></tr>
+                <tr><td>7th - 8th</td><td>1 pt</td></tr>
+                <tr><td>Each Finish (Kill)</td><td>1 pt</td></tr>
+            </table>
+        </div>
+
+        <div class="info-card">
+            <h3>Top 5 Prize Pool</h3>
+            <p>
+                Winner: ₹8,000<br>
+                2nd Place: ₹5,000<br>
+                3rd Place: ₹3,500<br>
+                4th Place: ₹2,000<br>
+                5th Place: ₹1,500
+            </p>
+        </div>
+
+        <!-- Roadmap -->
+        <h2 class="section-title">Timeline</h2>
+        <div class="roadmap">
+            <div class="roadmap-step">
+                <div class="step-date">JANUARY 05 - March 15</div>
+                <p>Registration Window Opens</p>
+            </div>
+            <div class="roadmap-step">
+                <div class="step-date">March 20 - 25</div>
+                <p>Qualifier Group Stages</p>
+            </div>
+            <div class="roadmap-step">
+                <div class="step-date">April 01</div>
+                <p>The Grand Finale (Top 16)</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky-Feel Bottom CTA -->
+    <section class="cta-container">
+        <h2>Ready to Deploy?</h2>
+        <p style="color: var(--text-dim); font-size: 0.9rem;">Slots are filling fast!</p>
+        <p style="color: var(--primary-gold); margin-top: 5px; font-weight: bold;">Registration Starts: 05 Jan</p>
+        
+        <a href="https://wa.me/8798615841?text=I%20want%20to%20register%20my%20SQUAD%20for%20Abadnu%20Official%20BGMI%20Tournament.%20Please%20send%20payment%20details." class="btn-whatsapp" target="_blank">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.038 3.284l-.542 2.317 2.35-.542c.958.555 1.954.835 3.041.835 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.694-5.887-5.694zm3.369 8.303c-.144.405-.723.731-1.189.771-.312.028-.716.059-1.144-.047-.282-.07-.611-.164-1.049-.355-1.854-.805-3.051-2.736-3.144-2.859-.093-.124-.757-.905-.757-1.728 0-.822.433-1.226.588-1.401.155-.175.34-.219.453-.219.113 0 .227.001.326.005.103.004.242-.039.379.293.144.35.492 1.2.533 1.285.041.085.068.185.011.3-.057.114-.085.185-.17.284-.085.1-.178.223-.255.3-.092.093-.189.194-.081.379.109.184.485.8.104 1.344.318.31.58.571.868.75.289.178.455.228.625.048.17-.18.732-.85.928-1.143.196-.293.392-.243.66-.143.268.099 1.7.8 1.996.947.297.147.495.219.567.345.072.126.072.73-.072 1.135z"/>
+            </svg>
+            JOIN VIA WHATSAPP
+        </a>
+    </section>
+
+    <div class="footer-text">
+        &copy; 2026 Abadnu Official. BGIS Standard Rules Applied.
+    </div>
+
+</body>
+</html>
